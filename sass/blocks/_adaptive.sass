@@ -1,0 +1,106 @@
+@media screen and ( max-width: 920px )
+  .header 
+    & .overlay 
+      & .header-title
+        & .form 
+          & form 
+            grid-template-columns: 1fr 
+            grid-row-gap: 60px 
+            & .input 
+              width: 290px
+            & .btn
+              & button 
+                width: 170px  
+@media screen and ( max-width: 800px )
+  .benefits
+    & .benefits-wrap
+      grid-template-columns: 1fr 
+      grid-row-gap: 50px 
+@media screen and ( max-width: 650px )
+  .header 
+    & .overlay 
+      & .nav 
+        & .logo
+          &.active 
+            position: fixed  
+        & .menu
+          & .burger 
+            display: grid  
+            align-items: center
+            justify-content: end 
+            width: 24px 
+            height: 14px
+            position: relative 
+            z-index: 9999
+            &.active 
+              position: fixed 
+              right: 15px 
+              top: 70px
+            &.active span 
+              display: none 
+            &.active::before 
+              transform: rotate(45deg)
+              width: 25px 
+              top: 0
+            &.active::after 
+              width: 25px 
+              transform: rotate(-45deg)
+              top: 0
+            & span 
+              background: #ffffff
+              height: 2px 
+              width: 24px 
+              transition: .3s linear 
+            &::before
+              content: ''
+              position: absolute
+              width: 24px 
+              height: 2px 
+              background: #ffffff
+              top: 0
+              right: 0
+              transition: .3s linear 
+            &::after
+              content: ''
+              position: absolute
+              width: 16px 
+              height: 2px 
+              background: #ffffff
+              bottom: 0
+              right: 0
+              transition: .3s linear  
+          & .main-menu 
+            position: fixed
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: rgba(#1C1C1C,.9)
+            z-index: 9998
+            display: none 
+            padding-top: 150px 
+            padding-left: 25px 
+            & a 
+              display: block
+              margin-top: 35px 
+              margin-left: 0
+              &:first-of-type
+                margin-top: 0 
+            &.show 
+              display: block 
+      & .header-title
+        margin-top: 10%
+        & h3 
+          max-width: 100%
+          font-size: 30px 
+          line-height: normal
+        & p 
+          max-width: 100%
+        & .form 
+          & form 
+            & .input 
+              & input 
+                font-size: 16px 
+            & .btn 
+              & button 
+                font-size: 18px 
