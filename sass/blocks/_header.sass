@@ -1,11 +1,20 @@
 .header
-  height: 960px
-  background: url(../img/header/bg.png) no-repeat 
-  background-size: cover 
-  background-position: center 
+  min-height: 100vh 
   position: relative
-  z-index: 5
-  & .overlay 
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 960px
+    background: url(../img/header/bg.png) no-repeat 
+    background-size: cover 
+    background-position: center 
+    z-index: 1
+  &::after 
+    content: ''
+    position: absolute
     background: url(../img/header/overlay.png) no-repeat 
     width: 100%
     height: 960px
@@ -13,98 +22,103 @@
     left: 0
     background-size: cover 
     background-position: center 
-    & .nav 
-      display: grid 
-      grid-template-columns: min-content 1fr 
-      align-items: center
-      padding-top: 55px 
-      & .logo 
-        position: relative
-        z-index: 9999
-        & a 
+    z-index: 2
+  & .nav 
+    display: grid 
+    grid-template-columns: min-content 1fr 
+    align-items: center
+    padding-top: 55px 
+    position: relative
+    z-index: 5
+    & .logo 
+      &__link 
+        display: inline-block
+        width: 82px 
+        height: 31px 
+        &-img 
+          width: 100% 
+          height: 100% 
+    & .menu 
+      justify-self: end 
+      & .burger 
+        display: none 
+      & .main-menu 
+        &__link 
+          color: #ffffff
+          font-size: 18px 
           display: inline-block
-      & .menu 
-        justify-self: end 
-        & .burger 
-          display: none 
-        & .main-menu 
-          & a 
-            display: inline-block
+          margin-left: 80px 
+          &:first-of-type
+            margin-left: 0
+  &__content
+    position: relative
+    z-index: 3
+    margin-top: 175px 
+    &-title 
+      color: #ffffff
+      +med 
+      font-size: 50px 
+      max-width: 620px
+      line-height: 60px 
+    &-text 
+      margin-top: 20px 
+      color: #ffffff
+      max-width: 545px 
+    & .form 
+      margin-top: 55px 
+      &__wrap 
+        display: grid 
+        grid-template-columns: 300px 300px 170px 
+        align-items: center
+        grid-gap: 60px 
+      &__input 
+        width: 100%
+        height: 50px 
+        border-bottom: 2px solid #BFC0C5
+        position: relative
+        &::before
+          content: ''
+          position: absolute
+          left: 0
+          top: 0
+          width: 20px 
+          height: 20px 
+          background: url(../img/header/form.svg) no-repeat 
+          background-position: center
+        &-item 
+          width: 100%
+          height: 100%
+          color: #ffffff
+          +med 
+          font-size: 18px 
+          transform: translateY(-15px)
+          padding-left: 45px 
+          &::placeholder 
             color: #ffffff
-            font-size: 18px 
-            margin-left: 80px 
-            &:first-of-type
-              margin-left: 0
-    & .header-title
-      margin-top: 16.6%
-      & h3 
-        max-width: 620px 
-        color: #ffffff
-        +med 
-        font-size: 50px 
-        line-height: 60px 
-      & p 
-        margin-top: 20px 
-        line-height: 24px 
-        color: #ffffff
-        max-width: 545px 
-      & .form 
-        margin-top: 60px 
-        & form 
-          display: grid 
-          grid-template-columns: 300px 300px 170px
-          grid-column-gap: 60px 
-          align-items: center
-          & .input 
+      &__btn 
+        &-search 
+          color: #ffffff
+          height: 60px 
+          background: #1B7DFF
+          width: 170px 
+          +med 
+          font-size: 24px 
+          position: relative
+          overflow: hidden
+          transition: .3s linear 
+          z-index: 1
+          &:hover
+            color: #1B7DFF
+          &:hover::before 
+            transform: translateX(0)
+          &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
             width: 100%
-            height: 50px 
-            position: relative
-            border-bottom: 2px solid #BFC0C5
-            &::before
-              content: ''
-              position: absolute
-              top: 0
-              left: 0
-              background: url(../img/header/form.svg) no-repeat 
-              width: 20px 
-              height: 20px 
-            & input 
-              width: 100%
-              height: 100%
-              transform: translateY(-15px)
-              padding-left: 45px 
-              +med 
-              color: #ffffff
-              font-size: 18px 
-              &::placeholder 
-                color: #ffffff
-          & .btn 
-            & button 
-              height: 60px 
-              width: 100%
-              background: #1B7DFF
-              color: #ffffff
-              +med 
-              font-size: 24px 
-              position: relative
-              overflow: hidden
-              z-index: 1
-              transition: .3s linear 
-              &:hover
-                color: #1B7DFF
-              &:hover::before 
-                transform: translateX(0)
-              &::before
-                content: ''
-                position: absolute
-                top: 0
-                left: 0
-                width: 100%
-                height: 100%
-                background: #ffffff
-                transform: translateX(-100%)
-                transition: .3s linear 
-                z-index: -1
-
-
-
+            height: 100%
+            background: #ffffff
+            transform: translateX(-100%)
+            transition: .3s linear 
+            z-index: -1

@@ -1,106 +1,136 @@
 @media screen and ( max-width: 920px )
   .header 
-    & .overlay 
-      & .header-title
-        & .form 
-          & form 
-            grid-template-columns: 1fr 
-            grid-row-gap: 60px 
-            & .input 
-              width: 290px
-            & .btn
-              & button 
-                width: 170px  
+    &__content
+      & .form 
+        &__wrap 
+          grid-template-columns: 290px 
+@media screen and ( max-width: 850px )
+  .footer 
+    &__wrap 
+      display: grid 
+      grid-template-columns: 1fr 
+      & .block 
+        &:nth-child(2)
+          justify-self: start 
+          margin-top: 50px 
 @media screen and ( max-width: 800px )
   .benefits
-    & .benefits-wrap
+    &__wrap
       grid-template-columns: 1fr 
-      grid-row-gap: 50px 
+  .prefecture
+    &-wrap 
+      & .block 
+        grid-template-columns: 1fr 
+        grid-gap: 50px 
+        &__content 
+          padding-top: 0 
+        &:nth-child(1)
+          & .block__content 
+            padding-right: 0
+        &:nth-child(2)
+          & .block__content 
+            padding-left: 0 
 @media screen and ( max-width: 650px )
   .header 
-    & .overlay 
-      & .nav 
-        & .logo
+    & .nav 
+      & .logo
+        &.active 
+          position: fixed  
+          z-index: 9999
+      & .menu
+        & .burger 
+          display: grid  
+          align-items: center
+          justify-content: end 
+          width: 24px 
+          height: 14px
+          position: relative 
+          z-index: 9999
           &.active 
-            position: fixed  
-        & .menu
-          & .burger 
-            display: grid  
-            align-items: center
-            justify-content: end 
-            width: 24px 
-            height: 14px
-            position: relative 
-            z-index: 9999
-            &.active 
-              position: fixed 
-              right: 15px 
-              top: 70px
-            &.active span 
-              display: none 
-            &.active::before 
-              transform: rotate(45deg)
-              width: 25px 
-              top: 0
-            &.active::after 
-              width: 25px 
-              transform: rotate(-45deg)
-              top: 0
-            & span 
-              background: #ffffff
-              height: 2px 
-              width: 24px 
-              transition: .3s linear 
-            &::before
-              content: ''
-              position: absolute
-              width: 24px 
-              height: 2px 
-              background: #ffffff
-              top: 0
-              right: 0
-              transition: .3s linear 
-            &::after
-              content: ''
-              position: absolute
-              width: 16px 
-              height: 2px 
-              background: #ffffff
-              bottom: 0
-              right: 0
-              transition: .3s linear  
-          & .main-menu 
-            position: fixed
-            top: 0
-            left: 0
-            width: 100%
-            height: 100%
-            background: rgba(#1C1C1C,.9)
-            z-index: 9998
+            position: fixed 
+            right: 15px 
+            top: 70px
+          &.active .burger__item 
             display: none 
-            padding-top: 150px 
-            padding-left: 25px 
-            & a 
-              display: block
-              margin-top: 35px 
-              margin-left: 0
-              &:first-of-type
-                margin-top: 0 
-            &.show 
-              display: block 
-      & .header-title
-        margin-top: 10%
-        & h3 
-          max-width: 100%
-          font-size: 30px 
-          line-height: normal
-        & p 
-          max-width: 100%
-        & .form 
-          & form 
-            & .input 
-              & input 
-                font-size: 16px 
-            & .btn 
-              & button 
-                font-size: 18px 
+          &.active::before 
+            transform: rotate(45deg)
+            width: 25px 
+            top: 0
+          &.active::after 
+            width: 25px 
+            transform: rotate(-45deg)
+            top: 0
+          &__item
+            background: #ffffff
+            height: 2px 
+            width: 24px 
+            transition: .3s linear 
+          &::before
+            content: ''
+            position: absolute
+            width: 24px 
+            height: 2px 
+            background: #ffffff
+            top: 0
+            right: 0
+            transition: .3s linear 
+          &::after
+            content: ''
+            position: absolute
+            width: 16px 
+            height: 2px 
+            background: #ffffff
+            bottom: 0
+            right: 0
+            transition: .3s linear  
+        & .main-menu 
+          position: fixed
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          background: rgba(#1C1C1C,.9)
+          z-index: 9998
+          display: none 
+          padding-top: 150px 
+          padding-left: 25px 
+          &__link 
+            display: block
+            margin-top: 35px 
+            margin-left: 0
+            &:first-of-type
+              margin-top: 0 
+          &.show 
+            display: block 
+    &__content 
+      margin-top: 75px
+      &-title 
+        max-width: 100%
+        font-size: 30px 
+        line-height: normal
+      &-text 
+        max-width: 100%
+      & .form 
+        &__wrap 
+        &__input 
+          &-item 
+            font-size: 16px 
+        &__btn 
+          &-search 
+            font-size: 18px 
+  .locations 
+    &__title 
+      &-wrap 
+        grid-template-columns: 1fr 
+        grid-gap: 50px 
+@media screen and ( max-width: 600px )
+  .locations
+    & .title-wrap
+      & h3 
+        font-size: 16px 
+  .footer 
+    &__wrap 
+      & .block 
+        &:nth-child(2)
+          grid-template-columns: 1fr 
+          grid-row-gap: 50px 
